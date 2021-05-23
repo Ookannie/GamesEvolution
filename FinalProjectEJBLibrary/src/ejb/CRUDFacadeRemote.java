@@ -9,7 +9,6 @@ import Entidades.Clientes;
 import Entidades.Inventariovideojuegos;
 import Entidades.Rentasvideojuegos;
 import Entidades.Videojuegos;
-import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -19,15 +18,9 @@ import javax.ejb.Remote;
 @Remote
 public interface CRUDFacadeRemote {
 
-    public boolean registrarCliente(Clientes cliente);
-
     public boolean eliminarCliente(Integer id);
 
     public boolean actualizarCliente(Clientes cliente);
-
-    public List<Clientes> consultarClientes();
-
-    public Clientes consultarClienteID(Integer id);
 
     public boolean registrarVideojuego(Videojuegos videojuego);
 
@@ -35,19 +28,11 @@ public interface CRUDFacadeRemote {
 
     public boolean actualizarVideojuego(Videojuegos videojuego);
 
-    public List<Videojuegos> consultarVideojuegos();
-
-    public Videojuegos consultarVideojuegosID(Integer id);
-
     public boolean registrarInventario(Inventariovideojuegos inventario);
 
     public boolean eliminarInventario(Integer id);
 
     public boolean actualizarInventario(Inventariovideojuegos inventario);
-
-    public List<Inventariovideojuegos> consultarInventario();
-
-    public Inventariovideojuegos consultarInventarioID(Integer id);
 
     public boolean registrarRenta(Rentasvideojuegos renta);
 
@@ -55,8 +40,5 @@ public interface CRUDFacadeRemote {
 
     public boolean actualizarRenta(Rentasvideojuegos renta);
 
-    public List<Rentasvideojuegos> consultarRentas();
-
-    public Rentasvideojuegos consultarInventarioID(Rentasvideojuegos renta);
 
 }

@@ -781,17 +781,11 @@ exists or setup the property manually. For example like this:
                 COMPILATION SECTION
             -->
     <target depends="init" if="no.dist.ear.dir" name="-deps-module-jar" unless="no.deps">
-        <ant antfile="${project.FinalProjectEJBLibrary}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
         <ant antfile="${project.videocentro_JPA}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
     </target>
     <target depends="init" if="dist.ear.dir" name="-deps-ear-jar" unless="no.deps">
-        <ant antfile="${project.FinalProjectEJBLibrary}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
         <ant antfile="${project.videocentro_JPA}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
@@ -807,25 +801,45 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="compile,-library-inclusion-in-archive-weblogic,-library-inclusion-in-archive-by-user" name="library-inclusion-in-archive"/>
     <target if="is.jars.in.ejbjar" name="-library-inclusion-in-archive-by-user">
-        <copyfiles files="${reference.FinalProjectEJBLibrary.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${reference.videocentro_JPA.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.mysql-connector-java-8.0.19.jar}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.FinalProjectEJBLibrary.jar}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.videocentro_JPA.jar}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.eclipselink.jar}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.javax.persistence_2.1.0.v201304241213.jar}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.mysql-connector-java-8.0.19.jar-2}" todir="${build.classes.dir}"/>
+        <copyfiles files="${file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar}" todir="${build.classes.dir}"/>
     </target>
     <target if="is.server.weblogic" name="-library-inclusion-in-archive-weblogic">
-        <basename file="${reference.FinalProjectEJBLibrary.jar}" property="manifest.reference.FinalProjectEJBLibrary.jar"/>
         <basename file="${reference.videocentro_JPA.jar}" property="manifest.reference.videocentro_JPA.jar"/>
         <basename file="${file.reference.mysql-connector-java-8.0.19.jar}" property="manifest.file.reference.mysql-connector-java-8.0.19.jar"/>
+        <basename file="${file.reference.FinalProjectEJBLibrary.jar}" property="manifest.file.reference.FinalProjectEJBLibrary.jar"/>
+        <basename file="${file.reference.videocentro_JPA.jar}" property="manifest.file.reference.videocentro_JPA.jar"/>
+        <basename file="${file.reference.eclipselink.jar}" property="manifest.file.reference.eclipselink.jar"/>
+        <basename file="${file.reference.javax.persistence_2.1.0.v201304241213.jar}" property="manifest.file.reference.javax.persistence_2.1.0.v201304241213.jar"/>
+        <basename file="${file.reference.mysql-connector-java-8.0.19.jar-2}" property="manifest.file.reference.mysql-connector-java-8.0.19.jar-2"/>
+        <basename file="${file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar}" property="manifest.file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar"/>
         <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Extension-List" value="jar-1 jar-2 jar-3 "/>
-            <attribute name="jar-1-Extension-Name" value="${manifest.reference.FinalProjectEJBLibrary.jar}"/>
-            <attribute name="jar-2-Extension-Name" value="${manifest.reference.videocentro_JPA.jar}"/>
-            <attribute name="jar-3-Extension-Name" value="${manifest.file.reference.mysql-connector-java-8.0.19.jar}"/>
+            <attribute name="Extension-List" value="jar-1 jar-2 jar-3 jar-4 jar-5 jar-6 jar-7 jar-8 "/>
+            <attribute name="jar-1-Extension-Name" value="${manifest.reference.videocentro_JPA.jar}"/>
+            <attribute name="jar-2-Extension-Name" value="${manifest.file.reference.mysql-connector-java-8.0.19.jar}"/>
+            <attribute name="jar-3-Extension-Name" value="${manifest.file.reference.FinalProjectEJBLibrary.jar}"/>
+            <attribute name="jar-4-Extension-Name" value="${manifest.file.reference.videocentro_JPA.jar}"/>
+            <attribute name="jar-5-Extension-Name" value="${manifest.file.reference.eclipselink.jar}"/>
+            <attribute name="jar-6-Extension-Name" value="${manifest.file.reference.javax.persistence_2.1.0.v201304241213.jar}"/>
+            <attribute name="jar-7-Extension-Name" value="${manifest.file.reference.mysql-connector-java-8.0.19.jar-2}"/>
+            <attribute name="jar-8-Extension-Name" value="${manifest.file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar}"/>
         </manifest>
     </target>
     <target depends="compile" name="library-inclusion-in-manifest">
-        <copyfiles files="${reference.FinalProjectEJBLibrary.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${reference.videocentro_JPA.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.mysql-connector-java-8.0.19.jar}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.FinalProjectEJBLibrary.jar}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.videocentro_JPA.jar}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.eclipselink.jar}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.javax.persistence_2.1.0.v201304241213.jar}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.mysql-connector-java-8.0.19.jar-2}" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar}" todir="${dist.ear.dir}/lib"/>
         <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
     <target name="-copy-meta-inf">
@@ -1209,7 +1223,6 @@ exists or setup the property manually. For example like this:
                 CLEANUP SECTION
             -->
     <target depends="init" name="deps-clean" unless="no.deps">
-        <ant antfile="${project.FinalProjectEJBLibrary}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.videocentro_JPA}/build.xml" inheritall="false" target="clean"/>
     </target>
     <target depends="init" name="-do-clean">

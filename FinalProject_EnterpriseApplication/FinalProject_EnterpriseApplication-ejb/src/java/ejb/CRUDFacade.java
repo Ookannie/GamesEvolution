@@ -13,7 +13,6 @@ import Fachadas.FachadaClientes;
 import Fachadas.FachadaInventarioVideojuegos;
 import Fachadas.FachadaRentasVideojuegos;
 import Fachadas.FachadaVideojuegos;
-import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -23,11 +22,6 @@ import javax.ejb.Stateless;
 @Stateless
 public class CRUDFacade implements CRUDFacadeRemote {
 
-    @Override
-    public boolean registrarCliente(Clientes cliente) {
-        FachadaClientes fClientes = new FachadaClientes();
-        return fClientes.registrarCliente(cliente);
-    }
 
     @Override
     public boolean eliminarCliente(Integer id) {
@@ -39,18 +33,6 @@ public class CRUDFacade implements CRUDFacadeRemote {
     public boolean actualizarCliente(Clientes cliente) {
         FachadaClientes fClientes = new FachadaClientes();
         return fClientes.editarCliente(cliente);
-    }
-
-    @Override
-    public List<Clientes> consultarClientes() {
-        FachadaClientes fClientes = new FachadaClientes();
-        return fClientes.consultarClientes();
-    }
-
-    @Override
-    public Clientes consultarClienteID(Integer id) {
-        FachadaClientes fClientes = new FachadaClientes();
-        return fClientes.consultarClienteId(id);
     }
 
     @Override
@@ -72,18 +54,6 @@ public class CRUDFacade implements CRUDFacadeRemote {
     }
 
     @Override
-    public List<Videojuegos> consultarVideojuegos() {
-        FachadaVideojuegos fVideojuegos = new FachadaVideojuegos();
-        return fVideojuegos.consultarVideojuegos();
-    }
-
-    @Override
-    public Videojuegos consultarVideojuegosID(Integer id) {
-        FachadaVideojuegos fVideojuegos = new FachadaVideojuegos();
-        return fVideojuegos.consultarVideojuegoID(id);
-    }
-
-    @Override
     public boolean registrarInventario(Inventariovideojuegos inventario) {
         FachadaInventarioVideojuegos fInventario = new FachadaInventarioVideojuegos();
         return fInventario.registrarInventario(inventario);
@@ -102,18 +72,6 @@ public class CRUDFacade implements CRUDFacadeRemote {
     }
 
     @Override
-    public List<Entidades.Inventariovideojuegos> consultarInventario() {
-        FachadaInventarioVideojuegos fInventario = new FachadaInventarioVideojuegos();
-        return fInventario.consultarinventarioVideojuegos();
-    }
-
-    @Override
-    public Inventariovideojuegos consultarInventarioID(Integer id) {
-        FachadaInventarioVideojuegos fInventario = new FachadaInventarioVideojuegos();
-        return fInventario.consultarInventarioVideojuegosID(id);
-    }
-
-    @Override
     public boolean registrarRenta(Rentasvideojuegos renta) {
         FachadaRentasVideojuegos fRentas = new FachadaRentasVideojuegos();
         return fRentas.registrarRenta(renta);
@@ -129,18 +87,6 @@ public class CRUDFacade implements CRUDFacadeRemote {
     public boolean actualizarRenta(Rentasvideojuegos renta) {
         FachadaRentasVideojuegos fRentas = new FachadaRentasVideojuegos();
         return fRentas.editarRenta(renta);
-    }
-
-    @Override
-    public List<Rentasvideojuegos> consultarRentas() {
-        FachadaRentasVideojuegos fRentas = new FachadaRentasVideojuegos();
-        return fRentas.consultarRentas();
-    }
-
-    @Override
-    public Rentasvideojuegos consultarInventarioID(Rentasvideojuegos renta) {
-        FachadaRentasVideojuegos fRentas = new FachadaRentasVideojuegos();
-        return fRentas.consultarRenta(renta);
     }
 
     // Add business logic below. (Right-click in editor and choose
