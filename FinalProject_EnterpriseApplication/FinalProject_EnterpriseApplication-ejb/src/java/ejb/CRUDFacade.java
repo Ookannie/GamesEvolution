@@ -48,12 +48,6 @@ public class CRUDFacade implements CRUDFacadeRemote {
     }
 
     @Override
-    public boolean actualizarVideojuego(Videojuegos videojuego) {
-        FachadaVideojuegos fVideojuegos = new FachadaVideojuegos();
-        return fVideojuegos.editarVideojuego(videojuego);
-    }
-
-    @Override
     public boolean registrarInventario(Inventariovideojuegos inventario) {
         FachadaInventarioVideojuegos fInventario = new FachadaInventarioVideojuegos();
         return fInventario.registrarInventario(inventario);

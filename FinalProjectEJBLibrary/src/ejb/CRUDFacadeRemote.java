@@ -26,8 +26,6 @@ public interface CRUDFacadeRemote {
 
     public boolean eliminarVideojuego(Integer id);
 
-    public boolean actualizarVideojuego(Videojuegos videojuego);
-
     public boolean registrarInventario(Inventariovideojuegos inventario);
 
     public boolean eliminarInventario(Integer id);
