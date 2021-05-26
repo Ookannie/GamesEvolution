@@ -5,14 +5,13 @@
         <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
             <name>FinalProject_EnterpriseApplication-ejb</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
-            <included-library dirs="200">reference.videocentro_JPA.jar</included-library>
             <included-library dirs="200">file.reference.mysql-connector-java-8.0.19.jar</included-library>
             <included-library dirs="200">file.reference.FinalProjectEJBLibrary.jar</included-library>
-            <included-library dirs="200">file.reference.videocentro_JPA.jar</included-library>
             <included-library dirs="200">file.reference.eclipselink.jar</included-library>
             <included-library dirs="200">file.reference.javax.persistence_2.1.0.v201304241213.jar</included-library>
             <included-library dirs="200">file.reference.mysql-connector-java-8.0.19.jar-2</included-library>
             <included-library dirs="200">file.reference.org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar</included-library>
+            <included-library dirs="200">file.reference.videocentro_JPA.jar</included-library>
             <source-roots>
                 <root id="src.dir" name="Source Packages"/>
             </source-roots>
@@ -20,15 +19,6 @@
                 <root id="test.src.dir" name="Test Packages"/>
             </test-roots>
         </data>
-        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
-            <reference>
-                <foreign-project>videocentro_JPA</foreign-project>
-                <artifact-type>jar</artifact-type>
-                <script>build.xml</script>
-                <target>jar</target>
-                <clean-target>clean</clean-target>
-                <id>jar</id>
-            </reference>
-        </references>
+        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1"/>
     </configuration>
 </project>
